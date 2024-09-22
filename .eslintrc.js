@@ -14,7 +14,7 @@ module.exports = {
     'react/jsx-indent-props': ['error', 2],
     'react/react-in-jsx-scope': 'off',
     'jsx-quotes': ['error', 'prefer-double'],
-    'quotes': ['error', 'double', { 'avoidEscape': true }],
+    'object-curly-spacing': ['error', 'always'],
   },
   settings: {
     react: {
