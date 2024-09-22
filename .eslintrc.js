@@ -13,6 +13,8 @@ module.exports = {
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
     'react/react-in-jsx-scope': 'off',
+    'jsx-quotes': ['error', 'prefer-double'],
+    'quotes': ['error', 'double', { 'avoidEscape': true }],
   },
   settings: {
     react: {
