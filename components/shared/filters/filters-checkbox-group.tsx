@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { FC, useState, useMemo, ChangeEvent } from 'react';
 
 import { FilterCheckbox, FilterCheckboxProps } from './filter-checkbox';
 import { Input } from "@/components/ui";
@@ -18,31 +19,49 @@ interface Props {
   name?: string;
 }
 
-export const FilterCheckboxGroup: React.FC<Props> = ({
+export const FilterCheckboxGroup: FC<Props> = ({
   title,
   items,
   defaultItems,
   limit = 5,
-  searchInputPlaceholder = 'Поиск...',
+  searchInputPlaceholder = 'Search...',
   className,
   selectedIds,
   onClickCheckbox,
   loading,
   name,
 }) => {
-  const [showAll, setShowAll] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [showAll, setShowAll] = useState<boolean>(false);
+  const [searchValue, setSearchValue] = useState<string>('');
 
-  const filtredItems = items.filter((item) =>
-    item.text.toLowerCase().includes(searchValue.toLowerCase()),
-  );
+  const filteredItems = useMemo(() => {
+    return items.filter((item) =>
+      item.text.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  }, [items, searchValue]);
+
+  const visibleItems = useMemo(() => {
+    return showAll ? filteredItems : defaultItems || filteredItems;
+  }, [showAll, filteredItems, defaultItems]);
+
+  const shouldShowToggle = useMemo(() => {
+    return items.length > limit;
+  }, [items.length, limit]);
+
+  const handlerToggle = () => {
+    setShowAll(prevState => !prevState);
+  }
+
+  const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+  };
 
   if (loading) {
     return (
       <div className={className}>
         <p className="font-bold mb-3">{title}</p>
 
-        {...Array(limit)
+        {Array(limit)
           .fill(0)
           .map((_, index) => (
             <div key={index} className="w-full mb-4 h-6 bg-gray-200 rounded-[8px] animate-pulse" />
@@ -62,13 +81,13 @@ export const FilterCheckboxGroup: React.FC<Props> = ({
           <Input
             placeholder={searchInputPlaceholder}
             className="bg-gray-50 border-none"
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={handleSearchChange}
           />
         </div>
       )}
 
       <div className="flex flex-col gap-4 max-h-96 pr-2 overflow-auto scrollbar">
-        {(showAll ? filtredItems : defaultItems || filtredItems).map((item) => (
+        {visibleItems?.map((item) => (
           <FilterCheckbox
             onCheckedChange={() => onClickCheckbox?.(item.value)}
             checked={selectedIds?.has(item.value)}
@@ -81,10 +100,10 @@ export const FilterCheckboxGroup: React.FC<Props> = ({
         ))}
       </div>
 
-      {items.length > limit && (
+      {shouldShowToggle && (
         <div className={showAll ? 'border-t border-t-neutral-100 mt-4' : ''}>
-          <button onClick={() => setShowAll(!showAll)} className="text-primary mt-3">
-            {showAll ? 'Скрыть' : '+ Показать все'}
+          <button onClick={handlerToggle} className="text-primary mt-3">
+            {showAll ? 'Hide' : '+ Show all'}
           </button>
         </div>
       )}

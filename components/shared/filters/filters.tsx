@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 // import { CheckboxFiltersGroup } from "@/components/shared/checkbox-filters-group";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FilterCheckboxGroup, Title } from "@/components/shared";
-import {RangeSlider} from "@/components/shared/range-slider";
+import { RangeSlider } from "@/components/shared/range-slider";
 
 interface Props {
   className?: string;
