@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prisma": "prisma generate",
+    "prisma:push": "prisma db push",
+    "prisma:deploy": "prisma deploy",
+    "prisma:studio": "prisma studio"
   },
   "dependencies": {
     "@eslint/js": "^9.11.0",
