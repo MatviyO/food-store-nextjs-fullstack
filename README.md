@@ -1,8 +1,9 @@
 # food-store-nextjs-fullstack
 nextjs 14.2 (latest origin, server comp, full stack, parallel route, api, ts tailwind, prisma, postgresql,nextAuth, zustand, react-hook-form, resent(emails), payments stripe, testing unit, e2e, integrations,
-login with credentials, google, gitHub
-shadcn ui component library with tailwind
-lucide icons, lucide-react
+
+Login with credentials, google, gitHub
+## Shadcn ui component library with tailwind
+## lucide-react  - icons lib,
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
