@@ -15,6 +15,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'jsx-quotes': ['error', 'prefer-double'],
     'object-curly-spacing': ['error', 'always'],
+    'react/jsx-max-props-per-line': [2, { maximum: 1 }],
   },
   settings: {
     react: {
