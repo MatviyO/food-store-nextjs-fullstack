@@ -64,7 +64,8 @@ export const FilterCheckboxGroup: FC<Props> = ({
         {Array(limit)
           .fill(0)
           .map((_, index) => (
-            <div key={index} className="w-full mb-4 h-6 bg-gray-200 rounded-[8px] animate-pulse" />
+            <div key={index}
+              className="w-full mb-4 h-6 bg-gray-200 rounded-[8px] animate-pulse" />
           ))}
 
         <div className="w-28 h-4 bg-gray-200 rounded-[8px] animate-pulse" />
@@ -102,7 +103,8 @@ export const FilterCheckboxGroup: FC<Props> = ({
 
       {shouldShowToggle && (
         <div className={showAll ? 'border-t border-t-neutral-100 mt-4' : ''}>
-          <button onClick={handlerToggle} className="text-primary mt-3">
+          <button onClick={handlerToggle}
+            className="text-primary mt-3">
             {showAll ? 'Hide' : '+ Show all'}
           </button>
         </div>
