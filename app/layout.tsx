@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${nunito.className}`}
       >
         <main className="min-h-screen">
-          <Header />
+          <Header hasSearch />
           {children}
         </main>
       </body>
