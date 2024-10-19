@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import React from "react";
+import { FC } from "react";
 import { Title } from "@/components/shared";
 import { Button } from "@/components/ui";
 import { PizzaImage } from "@/components/shared/card/pizza-image";
@@ -21,7 +21,7 @@ interface Props {
   onClickAdd?: VoidFunction;
 }
 
-export const PizzaCard: React.FC<Props> = ({
+export const PizzaCard: FC<Props> = ({
   name,
   items,
   imageUrl,
@@ -35,7 +35,7 @@ export const PizzaCard: React.FC<Props> = ({
     availablePizzaSizes,
     setPizzaSize,
     setPizzaType,
-    textDetaills,
+    textDetails,
     // loading,
     addPizza,
     selectedIngredientsIds,
@@ -75,7 +75,7 @@ export const PizzaCard: React.FC<Props> = ({
           className="font-extrabold mb-1"
         />
 
-        <p className="text-gray-400">{textDetaills}</p>
+        <p className="text-gray-400">{textDetails}</p>
 
         <PizzaSelector
           pizzaSizes={availablePizzaSizes}
