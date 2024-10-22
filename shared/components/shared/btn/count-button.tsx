@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import { CountIconButton } from './count-icon-button';
 
 export interface CountButtonProps {
