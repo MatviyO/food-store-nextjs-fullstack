@@ -1,10 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import React, { FC, useState } from 'react';
+import React, { FC, PropsWithChildren, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import {
@@ -13,11 +12,20 @@ import {
   SheetTrigger
 } from "@/shared/components/ui/sheet";
 import { Title } from "@/shared/components/shared";
+import { Button } from "@/shared/components/ui";
+import {
+  DrawerCartItem
+} from "@/shared/components/shared/cart/drawer-cart-item";
+import { useCart } from "@/shared/hooks/common/card/use-cart";
 
-export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
+export const CartDrawer: FC<PropsWithChildren> = ({ children }) => {
   const [redirecting, setRedirecting] = useState(false);
 
-  // const { totalAmount, items, loading } = useCart(true);
+  const {
+    totalAmount,
+    items,
+    loading,
+  } = useCart();
 
   return (
     <Sheet>
@@ -27,7 +35,7 @@ export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
           {totalAmount > 0 && (
             <SheetHeader>
               <SheetTitle>
-                В корзине <span className="font-bold">{items.length} товара</span>
+                In the cart <span className="font-bold">{items.length} items</span>
               </SheetTitle>
             </SheetHeader>
           )}
@@ -42,11 +50,11 @@ export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
               />
               <Title
                 size="sm"
-                text="Корзина пустая"
+                text="Cart is empty"
                 className="text-center font-bold my-2"
               />
               <p className="text-center text-neutral-500 mb-5">
-                Добавьте хотя бы одну пиццу, чтобы совершить заказ
+                Add at least one pizza to place an order
               </p>
 
               <SheetClose>
@@ -55,7 +63,7 @@ export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
                   size="lg"
                 >
                   <ArrowLeft className="w-5 mr-2" />
-                  Вернуться назад
+                  Go back
                 </Button>
               </SheetClose>
             </div>
@@ -87,7 +95,7 @@ export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
                 <div className="w-full">
                   <div className="flex mb-4">
                     <span className="flex flex-1 text-lg text-neutral-500">
-                      Итого
+                      Total
                       <div className="flex-1 border-b border-dashed border-b-neutral-200 relative -top-1 mx-2" />
                     </span>
 
@@ -101,7 +109,7 @@ export const CartDrawer: FC<React.PropsWithChildren> = ({ children }) => {
                       type="submit"
                       className="w-full h-12 text-base"
                     >
-                      Оформить заказ
+                      Place order
                       <ArrowRight className="w-5 ml-2" />
                     </Button>
                   </Link>
