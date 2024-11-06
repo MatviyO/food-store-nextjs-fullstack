@@ -1,12 +1,12 @@
 "use client";
 
 import React, {FC, useCallback} from "react";
-import { Input } from "@/components/ui/input";
-import { FilterCheckboxGroup, Title } from "@/components/shared";
-import { RangeSlider } from "@/components/shared/range-slider";
-import { filterPizza, filterTypesPizza } from "@/constants/filterPizza";
-import { useFilterState } from "@/hooks/common/search/use-filter-state";
-import { useFilterIngredients } from "@/hooks/common/search/use-inredients";
+import { Input } from "@/shared/components/ui/input";
+import { FilterCheckboxGroup, Title } from "@/shared/components/shared";
+import { RangeSlider } from "@/shared/components/shared/range-slider";
+import { filterPizza, filterTypesPizza } from "@/shared/constants/filterPizza";
+import { useFilterState } from "@/shared/hooks/common/search/use-filter-state";
+import { useFilterIngredients } from "@/shared/hooks/common/search/use-inredients";
 
 interface Props {
   className?: string;
