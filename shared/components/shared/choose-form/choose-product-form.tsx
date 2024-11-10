@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { IProduct } from "@/shared/hooks/common/card/use-choose-pizza";
 import { Title } from "@/shared/components/shared";
 import { Button } from "@/shared/components/ui";
+import { useCart } from "@/shared/hooks/common/card/use-cart";
 
 interface Props {
   imageUrl: string;
@@ -22,7 +23,7 @@ export const ChooseProductForm: React.FC<Props> = ({
   onClickAdd,
   className,
 }) => {
-  // const { addCartItem, loading } = useCart();
+  const { addCartItem, loading } = useCart();
 
   const productItem = items?.[0];
 
@@ -34,10 +35,10 @@ export const ChooseProductForm: React.FC<Props> = ({
 
   const handleClickAdd = async () => {
     try {
-      // await addCartItem({
-      //   productItemId: productItem.id,
-      //   quantity: 1,
-      // });
+      addCartItem({
+        productItemId: productItem.id,
+        quantity: 1,
+      });
       toast.success('Product added to cart');
     } catch (error) {
       console.error(error);
@@ -65,7 +66,7 @@ export const ChooseProductForm: React.FC<Props> = ({
         />
 
         <Button
-          // loading={loading}
+          loading={loading}
           onClick={handleClickAdd}
           className="h-[55px] px-10 text-base rounded-[18px] w-full mt-5"
         >
