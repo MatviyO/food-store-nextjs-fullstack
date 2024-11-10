@@ -39,8 +39,8 @@ export const ChoosePizzaForm: FC<Props> = ({
     setPizzaSize,
     setPizzaType,
     textDetails,
-    // loading,
-    // addPizza,
+    loading,
+    addPizza,
     selectedIngredientsIds,
     toggleAddIngredient,
   } = useChoosePizza(items);
@@ -55,7 +55,7 @@ export const ChoosePizzaForm: FC<Props> = ({
 
   const handleClickAdd = async () => {
     try {
-      // await addPizza();
+      await addPizza();
       onClickAdd?.();
     } catch (error) {
       toast.error("An error occurred while adding to the cart");
@@ -96,7 +96,7 @@ export const ChoosePizzaForm: FC<Props> = ({
         </div>
 
         <Button
-          // loading={loading}
+          loading={loading}
           onClick={handleClickAdd}
           className="h-[55px] px-10 text-base rounded-[18px] w-full"
         >

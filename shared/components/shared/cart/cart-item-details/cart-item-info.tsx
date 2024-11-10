@@ -1,34 +1,33 @@
 import { ICartItem } from '@/store/cart';
 import { FC } from "react";
 import {
-  PizzaType,
-  pizzaTypes
+  pizzaDetailsToText,
 } from "@/shared/constants/pizza-details-to-text";
 
 interface Props {
   name: string;
   pizzaSize?: number | null;
-  type?: PizzaType;
+  type?: never | number | null;
   ingredients?: ICartItem['ingredients'];
 }
 
 export const CartItemInfo: FC<Props> = ({ name, pizzaSize, type, ingredients }) => {
 
-
   const getCartItemDetails = () => {
     const details = [];
 
     if (pizzaSize && type) {
-      const typeName = pizzaTypes[type];
-      details.push(`${typeName} ${pizzaSize} см`);
+      details.push(pizzaDetailsToText(pizzaSize, type));
     }
 
     if (ingredients) {
       details.push(...ingredients.map((ingredient) => ingredient.name));
     }
 
+    console.log(details, ingredients);
     return details.join(', ');
-  }
+  };
+
 
   return (
     <div>
