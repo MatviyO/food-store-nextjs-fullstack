@@ -18,7 +18,8 @@ interface Props {
 
 export const ChooseProductModal: FC<Props> = ({ product }) => {
   const router = useRouter();
-  const isPizzaForm = Boolean(product?.items[0]?.pizzaType);
+  const firstItem = product?.items[0];
+  const isPizzaForm = Boolean(firstItem?.pizzaType);
 
   const onCloseModal = () => {
     router.back();
