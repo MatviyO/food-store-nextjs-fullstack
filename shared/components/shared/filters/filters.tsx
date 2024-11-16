@@ -1,6 +1,6 @@
 "use client";
 
-import React, {FC, useCallback} from "react";
+import React, { ChangeEvent, FC, useCallback } from "react";
 import { Input } from "@/shared/components/ui/input";
 import { FilterCheckboxGroup, Title } from "@/shared/components/shared";
 import { RangeSlider } from "@/shared/components/shared/range-slider";
@@ -28,7 +28,7 @@ export const Filters: FC<Props> = ({ className }) => {
   const { ingredients, isLoading } = useFilterIngredients();
 
   const onInputChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => updatePrices("pricesTo", e),
+    (e: ChangeEvent<HTMLInputElement>) => updatePrices("pricesTo", e),
     [updatePrices],
   );
 
