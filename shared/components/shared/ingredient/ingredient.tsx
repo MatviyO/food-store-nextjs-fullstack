@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import { CircleCheck } from "lucide-react";
 import React from "react";
 
@@ -37,7 +37,7 @@ export const Ingredient: React.FC<Props> = ({
         src={imageUrl}
       />
       <span className="text-xs mb-1">{name}</span>
-      <span className="font-bold">{price} ₽</span>
+      <span className="font-bold">{price} $</span>
     </div>
   );
 };
