@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import { Ingredient as IIngredient } from '@prisma/client';
 import { Ingredient } from './ingredient';
 
