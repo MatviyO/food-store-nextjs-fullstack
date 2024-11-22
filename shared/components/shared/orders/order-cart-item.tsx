@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import React, { FC } from 'react';
-import * as CartItemDetails from '@/components/shared/cart/cart-item-details';
+import * as CartItemDetails from '@/shared/components/shared/cart/cart-item-details';
 
 interface Props {
   imageUrl: string;
