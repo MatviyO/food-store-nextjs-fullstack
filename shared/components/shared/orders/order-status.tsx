@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import { OrderStatus as IOrderStatus } from '@prisma/client';
 import { Badge } from "lucide-react";
 
