@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import { ChevronDown } from 'lucide-react';
 import { OrderStatus } from './order-status';
 import { OrderStatus as IOrderStatus } from '@prisma/client';
-import { Title } from "@/components/shared";
-import { OrderCartItem } from "@/components/shared/orders/order-cart-item";
+import { Title } from "@/shared/components/shared";
+import { OrderCartItem } from "@/shared/components/shared/orders/order-cart-item";
 import { CartItemDTO } from "@/core/types/dto/cart";
 
 interface Props {
@@ -74,7 +74,7 @@ export const OrderItem: React.FC<Props> = ({
 
           <div className="p-5 px-7">
             <h3 className="text-xl">
-              Итого: <b>{totalAmount} ₽</b>
+              Итого: <b>{totalAmount} $</b>
             </h3>
           </div>
         </div>
