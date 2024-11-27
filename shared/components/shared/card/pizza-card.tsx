@@ -1,16 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/libs/utils";
 import { FC } from "react";
-import { Title } from "@/components/shared";
-import { Button } from "@/components/ui";
-import { PizzaImage } from "@/components/shared/card/pizza-image";
-import { IProduct, useChoosePizza } from "@/hooks/common/card/use-choose-pizza";
+import { Title } from "@/shared/components/shared";
+import { Button } from "@/shared/components/ui";
+import { PizzaImage } from "@/shared/components/shared/card/pizza-image";
+import { IProduct, useChoosePizza } from "@/shared/hooks/common/card/use-choose-pizza";
 import toast from "react-hot-toast";
-import { PizzaSelector } from "@/components/shared/card/pizza-selector";
+import { PizzaSelector } from "@/shared/components/shared/card/pizza-selector";
 import {
   IngredientsList
-} from "@/components/shared/ingredient/ingredients-list";
+} from "@/shared/components/shared/ingredient/ingredients-list";
 
 interface Props {
   imageUrl: string;
