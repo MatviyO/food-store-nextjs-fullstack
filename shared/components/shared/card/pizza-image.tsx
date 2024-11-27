@@ -1,6 +1,6 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import React, { FC } from 'react';
-import { PizzaSize } from "@/constants/pizza-details-to-text";
+import { PizzaSize } from "@/shared/constants/pizza-details-to-text";
 
 interface Props {
   className?: string;
