@@ -4,6 +4,7 @@ nextjs 14.2 (latest origin, server comp, full stack, parallel route, api, ts tai
 Login with credentials, google, gitHub
 ## Shadcn ui component library with tailwind
 ## lucide-react  - icons lib,
+## react-use - different hooks
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
