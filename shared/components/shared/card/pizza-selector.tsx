@@ -1,7 +1,7 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 import React from 'react';
-import { PizzaSizeItem, pizzaTypes } from "@/constants/pizza-details-to-text";
-import { GroupVariants } from "@/components/shared/card/group-variants";
+import { PizzaSizeItem, pizzaTypes } from "@/shared/constants/pizza-details-to-text";
+import { GroupVariants } from "@/shared/components/shared/card/group-variants";
 
 interface Props {
   pizzaSizes: PizzaSizeItem[];
