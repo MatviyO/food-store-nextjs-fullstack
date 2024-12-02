@@ -3,7 +3,7 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/libs/utils';
 
 type SliderProps = {
   className?: string;
