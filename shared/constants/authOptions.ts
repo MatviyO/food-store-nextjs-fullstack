@@ -48,6 +48,7 @@ export const authOptions: NextAuthOptions = {
 
         if (!findUser) return null;
 
+        // eslint-disable-next-line max-len
         const isPasswordValid = await compare(credentials.password, findUser.password);
 
         if (!isPasswordValid) return null;
