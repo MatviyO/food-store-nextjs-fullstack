@@ -1,0 +1,18 @@
+{
+  "entryPointStrategy": "expand",
+  "entryPoints": ["shared"],
+  "out": "docs",
+  "name": "Your Project Documentation",
+  "includeVersion": true,
+  "readme": "README.md",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "exclude": [
+    "**/*.test.tsx",
+    "**/*.api.ts",
+    "**/*.module.css",
+    "**/node_modules/**",
+    "**/.next/**"
+  ],
+  "tsconfig": "./tsconfig.json"
+}
