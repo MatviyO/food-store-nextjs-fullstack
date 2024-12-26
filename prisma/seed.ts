@@ -26,7 +26,6 @@ const generateProductItem = ({
   } as Prisma.ProductItemUncheckedCreateInput;
 };
 
-
 async function up() {
   await prisma.user.createMany({
     data: users,
